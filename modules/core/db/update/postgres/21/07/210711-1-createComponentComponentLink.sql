@@ -1,0 +1,5 @@
+create table CONFECTIONERY_COMPONENT_COMPONENT_LINK (
+    COMPONENT_1_ID uuid,
+    COMPONENT_2_ID uuid,
+    primary key (COMPONENT_1_ID, COMPONENT_2_ID)
+);
