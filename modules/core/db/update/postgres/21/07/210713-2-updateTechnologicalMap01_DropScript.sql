@@ -1,0 +1,1 @@
+alter table CONFECTIONERY_TECHNOLOGICAL_MAP drop column COOKING_TIME__U84314 cascade ;

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://technologicalMapEdit.caption"
+        focusComponent="form"
+        messagesPack="com.company.confectionery.web.screens.technologicalmap">
+    <data>
+        <instance id="technologicalMapDc"
+                  class="com.company.confectionery.entity.TechnologicalMap">
+            <view extends="_local">
+                <property name="componentsList" view="_minimal"/>
+            </view>
+            <loader/>
+            <collection id="componentsListDc" property="componentsList"/>
+        </instance>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="editActions" spacing="true">
+        <form id="form" dataContainer="technologicalMapDc">
+            <column width="350px">
+                <textField id="nameField" property="name"/>
+            </column>
+        </form>
+        <groupBox id="componentsListBox"
+                  caption="msg://com.company.confectionery.entity/TechnologicalMap.componentsList">
+            <table id="componentsListTable" dataContainer="componentsListDc" width="100%" height="200px">
+                <actions>
+                    <action id="add" type="add"/>
+                    <action id="exclude" type="exclude"/>
+                </actions>
+                <columns>
+                    <column id="name"/>
+                </columns>
+                <buttonsPanel>
+                    <button action="componentsListTable.add"/>
+                    <button action="componentsListTable.exclude"/>
+                </buttonsPanel>
+            </table>
+        </groupBox>
+        <hbox id="editActions" spacing="true">
+            <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
+            <button id="closeBtn" action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

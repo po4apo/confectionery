@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <menu-config xmlns="http://schemas.haulmont.com/cuba/menu.xsd">
     <menu id="application-confectionery" insertBefore="administration" caption="mainMsg://menu_config.application-confectionery">
+        <item screen="confectionery_TechnologicalMap.browse"
+              caption="mainMsg://menu_config.confectionery_TechnologicalMap.browse"/>
+        <item screen="confectionery_Component.browse" caption="mainMsg://menu_config.confectionery_Component.browse"/>
+        <item screen="confectionery_Order.browse" caption="mainMsg://menu_config.confectionery_Order.browse"/>
     </menu>
 </menu-config>

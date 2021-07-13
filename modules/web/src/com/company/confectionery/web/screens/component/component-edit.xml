@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://componentEdit.caption"
+        focusComponent="form"
+        messagesPack="com.company.confectionery.web.screens.component">
+    <data>
+        <instance id="componentDc"
+                  class="com.company.confectionery.entity.Component">
+            <view extends="_local"/>
+            <loader/>
+        </instance>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="editActions" spacing="true">
+        <form id="form" dataContainer="componentDc">
+            <column width="350px">
+                <textField id="nameField" property="name"/>
+                <textField id="qyantityField" property="qyantity"/>
+            </column>
+        </form>
+        <hbox id="editActions" spacing="true">
+            <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
+            <button id="closeBtn" action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

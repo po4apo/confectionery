@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://orderEdit.caption"
+        focusComponent="form"
+        messagesPack="com.company.confectionery.web.screens.order">
+    <data>
+        <instance id="orderDc"
+                  class="com.company.confectionery.entity.Order">
+            <view extends="_local">
+                <property name="pruductsList" view="_minimal"/>
+            </view>
+            <loader/>
+            <collection id="pruductsListDc" property="pruductsList"/>
+        </instance>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="editActions" spacing="true">
+        <form id="form" dataContainer="orderDc">
+            <column width="350px">
+                <textField id="orderNumberField" property="orderNumber"/>
+                <checkBox id="readyToCookField" property="readyToCook"/>
+                <checkBox id="cookedField" property="cooked"/>
+            </column>
+        </form>
+        <groupBox id="pruductsListBox" caption="msg://com.company.confectionery.entity/Order.pruductsList">
+            <table id="pruductsListTable" dataContainer="pruductsListDc" width="100%" height="200px">
+                <actions>
+                    <action id="add" type="add"/>
+                    <action id="exclude" type="exclude"/>
+                </actions>
+                <columns>
+                    <column id="name"/>
+                </columns>
+                <buttonsPanel>
+                    <button action="pruductsListTable.add"/>
+                    <button action="pruductsListTable.exclude"/>
+                </buttonsPanel>
+            </table>
+        </groupBox>
+        <hbox id="editActions" spacing="true">
+            <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
+            <button id="closeBtn" action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

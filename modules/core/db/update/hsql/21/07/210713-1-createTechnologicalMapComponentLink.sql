@@ -1,0 +1,5 @@
+create table CONFECTIONERY_TECHNOLOGICAL_MAP_COMPONENT_LINK (
+    TECHNOLOGICAL_MAP_ID varchar(36) not null,
+    COMPONENT_ID varchar(36) not null,
+    primary key (TECHNOLOGICAL_MAP_ID, COMPONENT_ID)
+);
