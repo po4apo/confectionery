@@ -8,7 +8,10 @@
         <collection id="technologicalMapsDc"
                     class="com.company.confectionery.entity.TechnologicalMap">
             <view extends="_local">
-                <property name="componentsList" view="_minimal"/>
+                <property name="componentsList" view="_minimal">
+                    <property name="quentity"/>
+                    <property name="component" view="_minimal"/>
+                </property>
             </view>
             <loader id="technologicalMapsDl">
                 <query>

@@ -1,12 +1,16 @@
 package com.company.confectionery.entity;
 
+import com.haulmont.chile.core.annotations.Composition;
 import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
 import com.haulmont.cuba.core.entity.annotation.OnDelete;
 import com.haulmont.cuba.core.entity.annotation.OnDeleteInverse;
 import com.haulmont.cuba.core.global.DeletePolicy;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
@@ -20,20 +24,19 @@ public class TechnologicalMap extends StandardEntity {
     @Column(name = "NAME", nullable = false, unique = true)
     private String name;
 
-    @JoinTable(name = "CONFECTIONERY_TECHNOLOGICAL_MAP_COMPONENT_LINK",
-            joinColumns = @JoinColumn(name = "TECHNOLOGICAL_MAP_ID"),
-            inverseJoinColumns = @JoinColumn(name = "COMPONENT_ID"))
+
     @OnDeleteInverse(DeletePolicy.UNLINK)
     @OnDelete(DeletePolicy.UNLINK)
-    @ManyToMany
-    private List<Component> componentsList;
+    @OneToMany(mappedBy = "technologicalMap")
+    @Composition
+    private List<ComponentsList> componentsList;
 
-    public List<Component> getComponentsList() {
-        return componentsList;
+    public void setComponentsList(List<ComponentsList> componentsList) {
+        this.componentsList = componentsList;
     }
 
-    public void setComponentsList(List<Component> componentsList) {
-        this.componentsList = componentsList;
+    public List<ComponentsList> getComponentsList() {
+        return componentsList;
     }
 
     public String getName() {

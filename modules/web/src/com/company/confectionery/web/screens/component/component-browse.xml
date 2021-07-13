@@ -34,7 +34,8 @@
             </actions>
             <columns>
                 <column id="name"/>
-                <column id="qyantity"/>
+                <column id="scale"/>
+                <column id="quantity"/>
             </columns>
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"

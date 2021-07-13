@@ -18,15 +18,26 @@ public class Component extends StandardEntity {
     @Column(name = "NAME", nullable = false, unique = true)
     private String name;
 
-    @Column(name = "QYANTITY")
-    private String qyantity;
+    @Column(name = "SCALE")
+    private String scale;
 
-    public String getQyantity() {
-        return qyantity;
+    @Column(name = "QYANTITY")
+    private String quantity;
+
+    public void setScale(Scale scale) {
+        this.scale = scale == null ? null : scale.getId();
     }
 
-    public void setQyantity(String qyantity) {
-        this.qyantity = qyantity;
+    public Scale getScale() {
+        return scale == null ? null : Scale.fromId(scale);
+    }
+
+    public String getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(String quantity) {
+        this.quantity = quantity;
     }
 
     public String getName() {

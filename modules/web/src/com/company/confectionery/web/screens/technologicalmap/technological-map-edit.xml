@@ -7,7 +7,10 @@
         <instance id="technologicalMapDc"
                   class="com.company.confectionery.entity.TechnologicalMap">
             <view extends="_local">
-                <property name="componentsList" view="_minimal"/>
+                <property name="componentsList" view="_minimal">
+                    <property name="quentity"/>
+                    <property name="component" view="_minimal"/>
+                </property>
             </view>
             <loader/>
             <collection id="componentsListDc" property="componentsList"/>
@@ -25,15 +28,18 @@
                   caption="msg://com.company.confectionery.entity/TechnologicalMap.componentsList">
             <table id="componentsListTable" dataContainer="componentsListDc" width="100%" height="200px">
                 <actions>
-                    <action id="add" type="add"/>
-                    <action id="exclude" type="exclude"/>
+                    <action id="create" type="create"/>
+                    <action id="edit" type="edit"/>
+                    <action id="remove" type="remove"/>
                 </actions>
                 <columns>
-                    <column id="name"/>
+                    <column id="quentity"/>
+                    <column id="component"/>
                 </columns>
                 <buttonsPanel>
-                    <button action="componentsListTable.add"/>
-                    <button action="componentsListTable.exclude"/>
+                    <button action="componentsListTable.create"/>
+                    <button action="componentsListTable.edit"/>
+                    <button action="componentsListTable.remove"/>
                 </buttonsPanel>
             </table>
         </groupBox>

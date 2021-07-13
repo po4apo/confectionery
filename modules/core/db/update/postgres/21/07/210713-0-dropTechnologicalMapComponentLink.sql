@@ -1,0 +1,1 @@
+alter table confectionery_technological_map_component_link rename to CONFECTIONERY_TECHNOLOGICAL_MAP_COMPONENT_LINK__U69902 ;

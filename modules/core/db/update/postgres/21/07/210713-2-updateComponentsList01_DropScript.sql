@@ -1,0 +1,1 @@
+alter table CONFECTIONERY_COMPONENTS_LIST drop column COMPANENT__U03719 cascade ;
