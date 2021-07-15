@@ -1,0 +1,3 @@
+alter table CONFECTIONERY_COMPONET_LIST drop column COMPONT_LIST_ID__U78166 cascade ;
+alter table CONFECTIONERY_COMPONET_LIST drop column QUENTITY__U14979 cascade ;
+alter table CONFECTIONERY_COMPONET_LIST drop column PURCHASE_LIST_ID__U61074 cascade ;

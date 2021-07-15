@@ -5,5 +5,7 @@
         <item screen="confectionery_Order.browse" caption="mainMsg://menu_config.confectionery_Order.browse"/>
         <item screen="confectionery_TechnologicalMap.browse"
               caption="mainMsg://menu_config.confectionery_TechnologicalMap.browse"/>
+        <item screen="confectionery_PurcheseList.browse"
+              caption="mainMsg://menu_config.confectionery_PurcheseList.browse"/>
     </menu>
 </menu-config>

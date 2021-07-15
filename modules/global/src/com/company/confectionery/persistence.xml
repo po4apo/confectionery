@@ -6,5 +6,7 @@
         <class>com.company.confectionery.entity.Component</class>
         <class>com.company.confectionery.entity.Order</class>
         <class>com.company.confectionery.entity.ComponentsList</class>
+        <class>com.company.confectionery.entity.PurchasesList</class>
+        <class>com.company.confectionery.entity.ComponentListForPurchases</class>
     </persistence-unit>
 </persistence>

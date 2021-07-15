@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        xmlns:c="http://schemas.haulmont.com/cuba/screen/jpql_condition.xsd"
+        caption="msg://purchasesListBrowse.caption"
+        focusComponent="purchasesListsTable"
+        messagesPack="com.company.confectionery.web.screens.purchaseslist">
+    <data readOnly="true">
+        <collection id="purchasesListsDc"
+                    class="com.company.confectionery.entity.PurchasesList">
+            <view extends="_local">
+                <property name="componentsList" view="_minimal">
+                    <property name="quentity"/>
+                    <property name="component" view="_minimal"/>
+                </property>
+            </view>
+            <loader id="purchasesListsDl">
+                <query>
+                    <![CDATA[select e from confectionery_PurcheseList e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="purchasesListsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="purchasesListsTable"
+                dataLoader="purchasesListsDl">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="purchasesListsTable"
+                    width="100%"
+                    dataContainer="purchasesListsDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="orderDate"/>
+                <column id="accertedDate"/>
+                <column id="isAccepted"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="purchasesListsTable.create"/>
+                <button id="editBtn" action="purchasesListsTable.edit"/>
+                <button id="removeBtn" action="purchasesListsTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>
